@@ -62,6 +62,14 @@ namespace MuhtarlikOtomasyonu.UI
             services.AddScoped<IMuhtarlikBusinessEngine, MuhtarlikBusinessEngine>();
             services.AddScoped<ISokakBusinessEngine, SokakBusinessEngine>();
 
+            services.AddScoped<IUnitOfWork,UnitOfWork>();
+
+            services.AddAutoMapper(typeof(Maps));
+            services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
+                .AddEntityFrameworkStores<MuhtarlikOtomasyonuContext>();
+            services.AddControllersWithViews();
+            services.AddRazorPages();
+            services.AddMvc();
 
         }
 
@@ -90,6 +98,10 @@ namespace MuhtarlikOtomasyonu.UI
 
             app.UseEndpoints(endpoints =>
             {
+                endpoints.MapControllerRoute(
+                    name: "default" ,
+                    pattern: "{controller=Home}/{action=Index}/{id?}"
+                );
                 endpoints.MapRazorPages();
             });
         }
