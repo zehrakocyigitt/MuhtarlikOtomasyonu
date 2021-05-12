@@ -13,6 +13,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using MuhtarlikOtomasyonu.BusinessEngine.Contracts;
+using MuhtarlikOtomasyonu.BusinessEngine.Implementation;
 using MuhtarlikOtomasyonu.Common.Mappings;
 using MuhtarlikOtomasyonu.Data.Contracts;
 using MuhtarlikOtomasyonu.Data.Implementation;
@@ -48,18 +50,17 @@ namespace MuhtarlikOtomasyonu.UI
                 options.UseSqlServer(Configuration.GetConnectionString("IdentityConnectionString")));
             services.AddRazorPages().AddRazorRuntimeCompilation();
             services.AddAutoMapper(typeof(Maps));
-            services.AddScoped<IAdresRepository, AdresRepository>();
 
-            services.AddScoped<IAdresRepository, AdresRepository>();
-            services.AddScoped<IAdresteOturanKisiRepository, AdresteOturanKisiRepository>();
-            services.AddScoped<IBelgeTalepRepository, BelgeTalepRepository>();
-            services.AddScoped<IBelgeTipRepository, BelgeTipRepository>();
-            services.AddScoped<IBinaRepository, BinaRepository>();
-            services.AddScoped<ICaddeRepository, CaddeRepository>();
-            services.AddScoped<IMahalleRepository, MahalleRepository>();
-            services.AddScoped<IMuhtarlikRepository, MuhtarlikRepository>();
-            services.AddScoped<ISokakRepository, SokakRepository>();
-            
+
+            services.AddScoped<IAdresBusinessEngine, AdresBusinessEngine>();
+            services.AddScoped<IAdresteOturanKisiBusinessEngine, AdresteOturanKisiBusinessEngine>();
+            services.AddScoped<IBelgeTalepBusinessEngine, BelgeTalepBusinessEngine>();
+            services.AddScoped<IBelgeTipBusinessEngine, BelgeTipBusinessEngine>();
+            services.AddScoped<IBinaBusinessEngine, BinaBusinessEngine>();
+            services.AddScoped<ICaddeBusinessEngine, CaddeBusinessEngine>();
+            services.AddScoped<IMahalleBusinessEngine, MahalleBusinessEngine>();
+            services.AddScoped<IMuhtarlikBusinessEngine, MuhtarlikBusinessEngine>();
+            services.AddScoped<ISokakBusinessEngine, SokakBusinessEngine>();
 
 
         }

@@ -1,4 +1,4 @@
-﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+<Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
     <TargetFramework>netcoreapp3.0</TargetFramework>
@@ -17,8 +17,14 @@
 
 
   <ItemGroup>
+    <ProjectReference Include="..\MuhtarlikOtomasyonu.BusinessEngine\MuhtarlikOtomasyonu.BusinessEngine.csproj" />
     <ProjectReference Include="..\MuhtarlikOtomasyonu.Common\MuhtarlikOtomasyonu.Common.csproj" />
     <ProjectReference Include="..\MuhtarlikOtomasyonu.Data\MuhtarlikOtomasyonu.Data.csproj" />
+  </ItemGroup>
+
+
+  <ItemGroup>
+    <Folder Include="Views\BelgeTip\" />
   </ItemGroup>
 
 </Project>
