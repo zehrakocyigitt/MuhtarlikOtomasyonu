@@ -31,3 +31,4 @@ Yeni Model Eklemek İçin ;
 8 - MuhtarlikOtomasyonu.BusinessEngine de Implementation'a Ekle
 9 - MuhtarlikOtomasyonu.UI'da Startup'a Ekle
 10 - MuhtarlikOtomasyonu.UI'da Controllers'a Ekle
+
